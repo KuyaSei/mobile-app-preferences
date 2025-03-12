@@ -1,19 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
-
-import { HomePageRoutingModule } from './home-routing.module';
-
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule
-  ],
-  declarations: [HomePage]
+    RouterModule.forChild([{ path: '', component: HomePage }]), // ✅ Import HomePage inside imports
+    HomePage  // ✅ Standalone components should be imported here
+  ]
 })
 export class HomePageModule {}

@@ -8,6 +8,21 @@
   transform: translateY(-50%);
 }
 
+ion-toolbar {
+  background-color: #0c5cec;
+}
+
+ion-item {
+  display: flex;
+  align-items: center;
+}
+
+ion-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+
 #container strong {
   font-size: 20px;
   line-height: 26px;

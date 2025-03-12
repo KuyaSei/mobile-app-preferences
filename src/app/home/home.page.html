@@ -1,20 +1,45 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Application Setting</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-item>
+      <ion-toggle [checked]="option1" (ionChange)="onToggleChange('option1', $event)">Option 1</ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-toggle [checked]="option2" (ionChange)="onToggleChange('option2', $event)">Option 2</ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-toggle [checked]="option3" (ionChange)="onToggleChange('option3', $event)">Option 3</ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-range [value]="rangeValue" [pin]="true" (ionChange)="onRangeChange($event)"></ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [checked]="checkbox1" (ionChange)="onCheckboxChange('checkbox1', $event)" labelPlacement="end">
+        Checkbox 1
+      </ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [checked]="checkbox2" (ionChange)="onCheckboxChange('checkbox2', $event)" labelPlacement="end">
+        Checkbox 2
+      </ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox [checked]="checkbox3" (ionChange)="onCheckboxChange('checkbox3', $event)" labelPlacement="end">
+        Checkbox 3
+      </ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-radio-group (ionChange)="onRadioChange($event)" [value]="radioValue">
+        <ion-radio value="true" labelPlacement="end">Radio 1</ion-radio>
+        <ion-radio value="false" labelPlacement="end">Radio 2</ion-radio>
+      </ion-radio-group>
+    </ion-item>
+    
+  </ion-list>
+  <ion-button expand="block" color="medium" (click)="resetPreferences()">Reset Settings</ion-button>
 </ion-content>
